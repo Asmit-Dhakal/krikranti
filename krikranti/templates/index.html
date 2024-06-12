@@ -1,4 +1,3 @@
-<!-- templates/upload.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +13,28 @@
     </form>
     <div id="predictionResult"></div>
 
+    <script>
+        $(document).ready(function(){
+            $('#uploadForm').on('submit', function(event){
+                event.preventDefault();
 
+                var formData = new FormData(this);
+
+                $.ajax({
+                    url: "{% url 'predict' %}",
+                    method: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(response){
+                        $('#predictionResult').html('Prediction: ' + response.prediction);
+                    },
+                    error: function(response){
+                        $('#predictionResult').html('Error: ' + response.responseJSON.error);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-S

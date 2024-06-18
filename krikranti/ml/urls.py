@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('', views.welcome, name='welcome'),
-    path('predict/', views.predict, name='predict'),  # Handle the prediction
+    path('predict/', views.predict, name='predict'),
+    # Handle the prediction
 
 ]

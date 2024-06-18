@@ -7,6 +7,4 @@ def load_model():
     model.load_state_dict(torch.load('./savedmodel/model.pth', map_location=torch.device('cpu')))
     model.eval()  # Set the model to evaluation mode
     return model
-
-
 model = load_model()

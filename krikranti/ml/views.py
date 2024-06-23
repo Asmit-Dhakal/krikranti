@@ -13,6 +13,7 @@ classes = {0: 'bacterial_leaf_blight', 1: 'brown_spot', 2: 'healthy', 3: 'leaf_b
 
 stats = ((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))
 
+
 # Data augmentation and normalization for training
 train_tfms = tt.Compose([
     tt.Resize((32, 32)),  # Resize images to 32x32 pixels

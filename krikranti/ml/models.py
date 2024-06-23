@@ -29,7 +29,7 @@ class ResNet9(ImageClassificationBase):
                                   conv_block(128, 128))  # 128 * 16 * 16
 
         self.conv3 = conv_block(128, 256, pool=True)  # 256 * 8 * 8
-        self.conv4 = conv_block(256, 512, pool=True)  #  512 * 4 * 4
+        self.conv4 = conv_block(256, 512, pool=True)   #  512 * 4 * 4
         self.res2 = nn.Sequential(conv_block(512, 512),
                                   conv_block(512, 512))  # 512 * 4 *4
 

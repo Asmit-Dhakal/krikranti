@@ -8,7 +8,7 @@ import torchvision.transforms as tt
 from .load_model import model
 
 classes = {0: 'bacterial_leaf_blight', 1: 'brown_spot', 2: 'healthy', 3: 'leaf_blast', 4: 'leaf_scald',
-           5: 'narrow_brown_spot'}  # Dictionary mapping index to label name
+           5: 'narrow_brown_spot'}   # Dictionary mapping index to label name
 
 
 stats = ((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))

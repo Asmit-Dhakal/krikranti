@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.contrib.auth import views as authentication_views
 
 urlpatterns = [
-    path('ml/', include('ml.urls')),
-    path('', include('shop.urls')),
+    path('', include('ml.urls')),
+    path('shop/', include('shop.urls')),
     path('admin/', admin.site.urls),
 ]

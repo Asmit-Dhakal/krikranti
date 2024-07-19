@@ -31,7 +31,7 @@ valid_tfms = tt.Compose([
 
 
 def welcome(request):
-    return render(request, 'index.html')
+    return render(request, 'ml.html')
 
 
 # Create your views here.

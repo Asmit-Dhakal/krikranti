@@ -36,7 +36,7 @@ def index(request):
     else:
         random_products = []
 
-    return render(request, 'shop/index.html', {
+    return render(request, 'index.html', {
         'product_objects': product_objects,
         'categories': categories,
         'subcategories': subcategories,
@@ -48,12 +48,12 @@ def index(request):
 
 def detail(request, id):
     products_object = Product.objects.get(id=id)
-    return render(request, 'shop/detail.html', {'product_object': products_object})
+    return render(request, 'product-detail.html', {'product_object': products_object})
 
 
 def about(request):
     product_objects = Product.objects.all()
-    return render(request, 'shop/about.html', {'product_objects': product_objects})
+    return render(request, 'store.html', {'product_objects': product_objects})
 
 
 def contact(request):
@@ -88,7 +88,7 @@ def tracker(request):
         except Exception as e:
             return HttpResponse('{"status":"error"}')
 
-    return render(request, 'shop/tracking.html')
+    return render(request, 'place-order.html')
 
 
 def checkout(request):
@@ -113,8 +113,8 @@ def checkout(request):
         update.save()
         thank = True
         id = orders.order_id
-        return render(request, 'shop/checkout.html', {'thank': thank, 'id': id})
+        return render(request, 'order_complete.html', {'thank': thank, 'id': id})
     # ---- transfer amount to paytm
-    return render(request, 'shop/checkout.html')
+    return render(request, 'place-order.html')
 
 
